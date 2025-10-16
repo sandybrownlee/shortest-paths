@@ -13,7 +13,7 @@ plugins {
     id 'application'
 
     // build fat jar
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'com.gradleup.shadow' version '9.2.2'
     
     id 'jacoco'
 }
@@ -42,12 +42,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-mainClassName = 'algorithm.AStar'
+application {
+    mainClass.set('algorithm.AStar')
+}
+
 shadowJar {
-    destinationDir = buildDir
-    baseName = 'astar'
-    classifier = null
-    version = null
+    archiveBaseName.set('astar')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+    destinationDirectory.set(layout.buildDirectory)
 }
 
 

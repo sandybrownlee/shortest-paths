@@ -16,5 +16,5 @@ public class TestTriangle {
 		assertEquals(Triangle.EQUALATERAL, Triangle.classifyTriangle(2, 2, 2));
 	}
 
-    	
+
 }
